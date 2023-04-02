@@ -16,7 +16,7 @@ const BadRequestError = require('../errors/bad-request-err');
 const UnauthorizedError = require('../errors/unauthorized-err');
 const NotFoundError = require('../errors/not-found-err');
 const ConflictError = require('../errors/conflict-err');
-// const { JWT_SECRET } = require('../config');
+
 const { NODE_ENV, JWT_SECRET } = process.env;
 
 module.exports.createUser = (req, res, next) => {
@@ -31,7 +31,6 @@ module.exports.createUser = (req, res, next) => {
       },
     ))
     .then((user) => User.findById(user._id.valueOf()))
-    // .then((user) => res.send(user))
     .then((user) => res.send({ data: user }))
     .catch((err) => {
       if (err.code === 11000) {
@@ -59,7 +58,6 @@ module.exports.login = (req, res, next) => {
       throw new UnauthorizedError(userAuthError);
     }))
     .then((user) => {
-      // const jwt = jsonwebtoken.sign({ _id: user._id }, JWT_SECRET, { expiresIn: '7d' });
       const jwt = jsonwebtoken.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'secret_code', { expiresIn: '7d' });
       res.send({ token: jwt });
     })
