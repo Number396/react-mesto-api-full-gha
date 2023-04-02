@@ -20,7 +20,7 @@ mongoose.connect(DB_ADDRESS, {
 
 app.use(requestLogger);
 app.use(helmet());
-app.use(cors({ origin: 'http://localhost:3001' }));
+app.use(cors({ origin: 'http://mesto.number396.nomoredomains.work' }));
 app.use(routes);
 app.use(errorLogger);
 app.use(errors());
