@@ -33,12 +33,10 @@ function App() {
 
   useEffect(() => {
     const isTokenExist = localStorage.getItem("token");
-    // console.log(token);
+
     if (isTokenExist) {
       Promise.all([api.getUserInfo(tokenJwt.token), api.getCards(tokenJwt.token)])
         .then(([userData, initialCards]) => {
-          // console.log(userData);
-          // console.log(initialCards);
           setCurrentUser(userData);
           setCards(initialCards);
         })
@@ -99,7 +97,6 @@ function App() {
   }
 
   function handleUpdateUser({ name, about }) {
-    console.log(tokenJwt);
     api
       .setUserInfo({ name, about, tokenJwt })
       .then((userData) => {
@@ -124,9 +121,6 @@ function App() {
     api
       .addCard({ name, link }, tokenJwt)
       .then((newCard) => {
-
-        console.log(newCard);
-
         setCards([newCard, ...cards]);
         closeAllPopups();
       })
@@ -150,7 +144,6 @@ function App() {
     apiAuth
       .login(email, password)
       .then((data) => {
-        // console.log('handle login:', data);
         if (data.token) {
           localStorage.setItem("token", data.token);
           setLoggedIn(true);
@@ -163,12 +156,10 @@ function App() {
 
   function tokenCheck() {
     const token = localStorage.getItem("token");
-    // console.log(token);
     if (token) {
       apiAuth
         .checkToken(token)
         .then((data) => {
-          // console.log('token check:', data);
           setLoggedIn(true);
           setUserData({ email: data.email });
           navigate("/", { replace: true });
@@ -177,10 +168,6 @@ function App() {
         .catch((error) => console.log(`Ошибка: ${error}`));
     }
   }
-
-  // function getToken() {
-  //   return localStorage.getItem("token");
-  // }
 
   function handleExitClick() {
     localStorage.removeItem("token");

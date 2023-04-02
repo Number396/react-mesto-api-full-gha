@@ -24,7 +24,6 @@ class Api {
     };
 
     register(email, password) {
-        // console.log(email, password);
         return this._request(this._signupUrl, {
             method: "POST",
             headers: this._headers,
@@ -33,7 +32,6 @@ class Api {
     };
 
     login(email, password) {
-        // console.log(email, password);
         return this._request(this._signinUrl, {
             method: "POST",
             headers: this._headers,

@@ -1,7 +1,6 @@
 import { NavLink, Route, Routes } from "react-router-dom";
 
 function Header({ onExitClick, userData }) {
-    // const location = useLocation();
 
     return (
         <header className="header">

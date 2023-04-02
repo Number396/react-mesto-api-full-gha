@@ -1,19 +1,9 @@
-// import { useState } from "react";
 import { useForm } from "../hooks/useForm";
 import AuthPage from "./AuthPage";
 
 
 function Register({ loggedIn, handleRegister }) {
     const { values, handleChange, setValues } = useForm({});
-    // const [userData, setUserData] = useState({
-    //     email: '',
-    //     password: ''
-    // });
-
-    // function handleChange(e) {
-    //     const { name, value } = e.target;
-    //     setUserData({ ...userData, [name]: value });
-    // }
 
     function handleSubmit(e) {
         e.preventDefault();

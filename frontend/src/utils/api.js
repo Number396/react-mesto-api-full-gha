@@ -24,7 +24,6 @@ class Api {
 
     getUserInfo(token) {
         return this._request(this._userUrl, {
-            // headers: this._headers,
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${token}`,
@@ -34,7 +33,6 @@ class Api {
 
     getCards(token) {
         return this._request(this._cardUrl, {
-            // headers: this._headers,
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${token}`,
@@ -42,17 +40,10 @@ class Api {
         })
     };
 
-    // getCards() {
-    //     return this._request(this._cardUrl, {
-    //         headers: this._headers,
-    //     })
-    // };
-
     setUserInfo({ name, about, tokenJwt }) {
         console.log(tokenJwt);
         return this._request(this._userUrl, {
             method: "PATCH",
-            // headers: this._headers,
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${tokenJwt.token}`,
@@ -67,7 +58,6 @@ class Api {
     addCard({ name, link }, tokenJwt) {
         return this._request(this._cardUrl, {
             method: "POST",
-            // headers: this._headers,
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${tokenJwt.token}`,
@@ -82,7 +72,6 @@ class Api {
     deleteCard(cardID, tokenJwt) {
         return this._request(`${this._cardUrl}/${cardID}`, {
             method: "DELETE",
-            // headers: this._headers,
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${tokenJwt.token}`,
@@ -102,7 +91,6 @@ class Api {
     setLike(cardID, tokenJwt) {
         return this._request(`${this._cardUrl}/${cardID}/likes`, {
             method: "PUT",
-            // headers: this._headers,
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${tokenJwt.token}`,
@@ -113,7 +101,6 @@ class Api {
     deleteLike(cardID, tokenJwt) {
         return this._request(`${this._cardUrl}/${cardID}/likes`, {
             method: "DELETE",
-            // headers: this._headers,
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${tokenJwt.token}`,
@@ -128,7 +115,6 @@ class Api {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${tokenJwt.token}`,
             },
-            // headers: this._headers,
             body: JSON.stringify({
                 avatar,
             }),
