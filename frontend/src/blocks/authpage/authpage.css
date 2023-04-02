@@ -1,0 +1,7 @@
+.authpage {
+  margin: 60px auto 80px;
+  display: flex;
+  flex-direction: column;
+  width: 358px;
+  /* border: 1px solid red; */
+}

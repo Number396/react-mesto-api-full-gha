@@ -1,0 +1,15 @@
+.header__login_type_entry {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  margin: 6px 0 0;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.header__login_type_entry:hover {
+  opacity: 0.8;
+}
