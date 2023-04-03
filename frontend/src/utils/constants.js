@@ -7,7 +7,7 @@ export const apiConfig = {
 };
 // url: "https://auth.nomoreparties.co/",
 export const apiAuthConfig = {
-    url: "http://api.mesto.number396.nomoredomains.monster",
+    url: "http://api.mesto.number396.nomoredomains.monster/",
     headers: {
         "Content-Type": "application/json"
     }
