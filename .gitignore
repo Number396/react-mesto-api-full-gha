@@ -8,9 +8,12 @@ node_modules
 
 # Optional npm cache directory
 .npm
+# production
+/build
 # Environment variables
 .env
 # Optional REPL history
 .DS_Store
 .idea
 .vscode
+
