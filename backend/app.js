@@ -20,7 +20,7 @@ mongoose.connect(DB_ADDRESS, {
 
 app.use(requestLogger);
 app.use(helmet());
-app.use(cors({ origin: '*' }));
+app.use(cors());
 app.use(routes);
 app.use(errorLogger);
 app.use(errors());
