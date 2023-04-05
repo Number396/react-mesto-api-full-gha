@@ -9,7 +9,7 @@ node_modules
 # Optional npm cache directory
 .npm
 # production
-/build
+build
 # Environment variables
 .env
 # Optional REPL history
