@@ -1,7 +1,6 @@
 import { useForm } from "../hooks/useForm";
 import AuthPage from "./AuthPage";
 
-
 function Register({ loggedIn, handleRegister }) {
     const { values, handleChange, setValues } = useForm({});
 
