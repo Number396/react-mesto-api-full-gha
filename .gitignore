@@ -11,7 +11,7 @@ node_modules
 # production
 build
 # Environment variables
-#.env
+.env
 # Optional REPL history
 .DS_Store
 .idea
