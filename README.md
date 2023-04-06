@@ -10,7 +10,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.50.95
+IP 158.160.50.95
 
 Frontend https://mesto.number396.nomoredomains.work
 
