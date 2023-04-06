@@ -27,7 +27,7 @@ module.exports.createCard = (req, res, next) => {
 
 module.exports.getCards = (req, res, next) => {
   Card.find({})
-    .populate('likes')
+    .populate(['owner', 'likes'])
     .then((card) => res.send(card))
     .catch((err) => {
       next(err);
@@ -43,7 +43,7 @@ module.exports.deleteCardById = (req, res, next) => {
       if (req.user._id !== card.owner.valueOf()) {
         throw new ForbiddenError(cardDeleteError);
       }
-      Card.findByIdAndRemove(req.params.cardId)
+      return Card.deleteOne(card)
         .then(() => {
           res.status(200).send({ message: 'пост удалён' });
         });
