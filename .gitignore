@@ -17,3 +17,5 @@ build
 .idea
 .vscode
 
+#test ignore
+backend/testToken.js
